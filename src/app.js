@@ -4,11 +4,12 @@ const DisplayView = require('./views/display_view.js');
 
 document.addEventListener('DOMContentLoaded', () => {
 
-const country = new Country();
-country.getData();
+const countries = new Countries();
+countries.getData();
 
-
-
+const selectElement = document.querySelector('#countries');
+const countriesDropDown = new SelectView(selectElement);
+countriesDropDown.bindEvents();
 
 
 });
