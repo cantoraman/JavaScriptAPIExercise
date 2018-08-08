@@ -9,13 +9,11 @@ SelectView.prototype.bindEvents = function () {
 
   PubSub.subscribe('Countries:countries-loaded', (event) => {
     const allCountries = event.detail;
-    console.log(allCountries);
     this.populate(allCountries);
-    console.log(allCountries);
   });
 
   this.element.addEventListener('change', (event) => {
-    const selectedIndex = evt.target.value;
+    const selectedIndex = event.target.value;
     PubSub.publish('SelectView:change', selectedIndex);
   });
 
